@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-// CREATE NEW USER
+// Buat user baru
 export async function register(req, res) {
   try {
     const { name, email, position, jersey } = req.body;
@@ -32,7 +32,7 @@ export async function register(req, res) {
   }
 };
 
-// GET USER BY ID
+// User ID
 export async function getUserByID(req, res) {
   const { id } = req.params;
 
@@ -64,7 +64,7 @@ export async function getUserByID(req, res) {
   }
 };
 
-// GET ALL USERS
+// ALL USER
 export async function getUsers(req, res) {
   try {
     const users = await prisma.user.findMany();
@@ -79,7 +79,7 @@ export async function getUsers(req, res) {
   }
 };
 
-// UPDATE USER BY ID
+// UPDATE ID
 export async function updateUserByID(req, res) {
   const { id } = req.params;
   const { name, email, position, jersey } = req.body;
@@ -122,7 +122,7 @@ export async function updateUserByID(req, res) {
   }
 };
 
-// DELETE USER BY ID
+// DELETE ID
 export async function deleteUserByID(req, res) {
   const { id } = req.params;
 
